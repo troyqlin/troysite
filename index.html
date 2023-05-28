@@ -24,8 +24,23 @@
     </body>
 
     <footer>
+      <?php
+        if (isset($_POST['submit'])) {
+          $name = $_POST['name'];
+          $email = $_POST['email'];
+          $message = $_POST['message'];
+
+          $myEmail = "pokierock@gmail.com";
+          $header = "From: ".$email;
+          $subject = "An email from a fan";
+          $txt = "You have received an email from ".$name.".\n\n".$message;
+
+          mail($myEmail, $subject, $txt, $header);
+          header("Location: index.php?mailsend");
+        }
+      ?>
       <section class="contact">
-        <form id="form" method="POST" action="form.php">
+        <form id="form" method="POST">
           <h2>Contact me</h2>
           <section>
             <label for="name">Name</label>
@@ -56,7 +71,6 @@
           <button type="submit" name="submit">Submit</button>
         </form>
       </section>
-      <script type="module" src="form.js"></script>
     </footer>
   </html>
 </DOCTYPE>
