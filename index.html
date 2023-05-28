@@ -1,22 +1,62 @@
 <DOCTYPE html>
-  <html>
+  <html lang="en">
     <head>
+      <meta charset="UTF-8" />
       <title>Troy's home page</title>
       <link rel="stylesheet" href="style.css" />
     </head>
 
+    <header>
+      <div class="name-div">
+        <h1 class="name">Troy</h1>
+        <p>
+          Hello! I'm a second year computer science and science student from
+          UNSW. This website is still a work in progress. Bear with the colours.
+        </p>
+      </div>
+    </header>
+
     <body>
-      <div class="green-background">
-        <div class="name-div">
-          <h1 class="name">Troy</h1>
-          <div class="introduction-div">
-            <p class="introduction">
-              Hello! I'm a second year computer science and science student from
-              UNSW. This website is still a work in progress.
-            </p>
-          </div>
-        </div>
-        <img class="portrait" src="portrait.jpeg" alt="This is as self-portrait of myself."
+      <div class="projects">
+        <h2>Projects</h2>
+        <p>I eventually plan on working on some projects.</p>
+      </div>
     </body>
+
+    <footer>
+      <section class="contact">
+        <form id="form" method="POST" action="form.php">
+          <h2>Contact me</h2>
+          <section>
+            <label for="name">Name</label>
+            <br />
+            <input type="text" name="name" id="name" placeholder="troy lin" />
+          </section>
+          <section>
+            <label for="email">Email</label>
+            <br />
+            <input
+              type="text"
+              name="email"
+              id="email"
+              placeholder="example@gmail.com"
+            />
+          </section>
+          <section>
+            <label for="message">Message</label>
+            <br />
+            <textarea
+              name="message"
+              id="message"
+              placeholder="Write your message here"
+              rows="6"
+              cols="30"
+            ></textarea>
+          </section>
+          <button type="submit" name="submit">Submit</button>
+        </form>
+      </section>
+      <script type="module" src="form.js"></script>
+    </footer>
   </html>
 </DOCTYPE>
