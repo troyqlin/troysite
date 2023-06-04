@@ -1,9 +1,6 @@
 import nodemailer from "nodemailer";
 
 function send_mail(from, email, message) {
-  console.log("still working haha");
-  console.log(from, email, message);
-
   // create reusable transporter object using the default SMTP transport
   let transporter = nodemailer.createTransport({
     service: "gmail",
