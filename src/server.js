@@ -9,9 +9,9 @@ const PORT = 8080;
 
 app.use(cors());
 
-app.use(express.static("public"));
-app.use("/src", express.static("src"));
-app.use("/docs", express.static("docs"));
+app.use(express.static("docs"));
+app.use(express.static("src"));
+// app.use("/docs", express.static("docs"));
 
 app.use(
   express.urlencoded({
