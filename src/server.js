@@ -1,6 +1,7 @@
 import { send_mail } from "./contact.js";
 import cors from "cors";
 import express from "express";
+import path from "path";
 // const express = require("express");
 const app = express();
 app.use(express.json());
@@ -21,7 +22,8 @@ app.use(
 
 app.post("/", (req, res) => {
   const { name, email, message } = req.body;
-  res.json(send_mail(name, email, message));
+  send_mail(name, email, message);
+  res.sendFile("submit.html", { root: path.join(".", "/docs") });
   // res.json(send_mail(name, email, message));
 });
 
