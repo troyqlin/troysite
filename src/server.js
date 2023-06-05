@@ -20,10 +20,10 @@ app.use(
   })
 );
 
-app.post("/", (req, res) => {
-  const { name, email, message } = req.body;
-  send_mail(name, email, message);
-  res.sendFile("submit.html", { root: path.join(".", "/docs") });
+app.get("/test", (req, res) => {
+  const { name, email, message } = req.query;
+  res.json(send_mail(name, email, message));
+  // res.sendFile("submit.html", { root: path.join(".", "/docs") });
   // res.json(send_mail(name, email, message));
 });
 
