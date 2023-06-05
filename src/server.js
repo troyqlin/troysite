@@ -11,17 +11,17 @@ const PORT = 8080;
 app.use(cors());
 
 app.use(express.static("docs"));
-app.use(express.static("src"));
+// app.use(express.static("src"));
 // app.use("/docs", express.static("docs"));
-
+/*
 app.use(
   express.urlencoded({
     extended: true,
   })
 );
-
-app.get("/test", (req, res) => {
-  const { name, email, message } = req.query;
+*/
+app.post("/test", (req, res) => {
+  // const { name, email, message } = req.query;
   res.send("hello");
   // send_mail(name, email, message);
   // res.sendFile("submit.html", { root: path.join(".", "/docs") });
