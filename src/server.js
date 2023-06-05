@@ -20,7 +20,7 @@ app.use(
   })
 );
 
-app.post("/test", (req, res) => {
+app.get("/test", (req, res) => {
   const { name, email, message } = req.query;
   res.send("hello");
   // send_mail(name, email, message);
